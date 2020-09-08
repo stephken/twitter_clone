@@ -1,0 +1,7 @@
+<a href="/"><button>Home</button></a>
+
+{% for tweet in received_notification  %}
+<h4>@{{tweet.twitter_user_app}} tweeted: {{tweet.time_date}}</h4>
+<h4>{{tweet.tweet_app}}</h4>
+<br>
+{% endfor %}

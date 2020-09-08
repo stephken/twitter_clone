@@ -1,0 +1,23 @@
+{% include 'partials/bootstrap.partial' %}
+{% include 'partials/crispy_forms.partial' %}
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        {% if request.path == "/login/" %}
+        <h1 class="mt-2">Log In</h1>
+        {% elif request.path == "/signup/"%}
+        <h1 class="mt-2">Sign Up</h1>
+        {% else %}
+        <h1 class="mt-2">Create Tweet</h1>
+        {% endif %}
+        <hr class="mt-0 mb-4">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

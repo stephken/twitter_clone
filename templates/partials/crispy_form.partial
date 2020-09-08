@@ -1,0 +1,10 @@
+<script>
+    function countChar(val) {
+      var len = val.value.length;
+      if (len >= 141) {
+        val.value = val.value.substring(0, 140);
+      } else {
+        $('#charNum').text(140 - len);
+      }
+    };
+  </script>
