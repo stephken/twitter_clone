@@ -11,7 +11,7 @@ def user_profile(request, user_id):
     tweets = models.Tweet.objects.filter(twitter_user=profile)
     user_following = request.user.following.all()
     following_list = list(user_following)
-    return render(request, "user_profile.html",
+    return render(request, "profile.html",
                   {"profile": profile,
                    "tweets": tweets,
                    "user_following": following_list

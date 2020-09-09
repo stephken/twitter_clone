@@ -1,8 +1,9 @@
+import re 
 from django.shortcuts import render, HttpResponseRedirect, reverse
 from django.contrib.auth.decorators import login_required
 from tweet_app import models, forms
 from twitter_user_app.models import TwitterUser
-from notification_app.models import TwitterUser
+from notification_app.models import Notification
 
 # Create your views here.
 def tweet_view(request, tweet_id):
@@ -23,7 +24,7 @@ def create_tweet(request):
             )
             if at_user:
                 for at in at_user:
-                    new_notification = notification_app.objects.create(
+                    new_notification = Notification.objects.create(
                         tweet = new_tweet,
                         receiver = TwitterUser.objects.get(username=at)
                     )

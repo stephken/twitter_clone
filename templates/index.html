@@ -2,13 +2,13 @@
 <h1>{{ Welcome }}</h1>
 <a href="/profile/{{user.id}}/"><button>Profile</button></a>
 <a href="/addtweet/"><button>Tweet</button></a>
-<a href="/notification_app/"><button>Notifications {{count}}</button></a>
+<a href="/notification/{{user.id}}"><button>Notifications {{count}}</button></a>
 <br>
 <br>
 {% for tweet in tweets %}
     <ul>
     <a href="/profile/{{tweet.twitter_user.id}}/">@{{tweet.twitter_user}}</a> 
-    <a href="/tweet_app/">{{tweet.time_date}}</a>
+    <a href="/tweet/{{user.id}}">{{tweet.time_date}}</a>
     <br>
     {{tweet.tweet}}
     </ul>
