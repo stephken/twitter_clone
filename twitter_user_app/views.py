@@ -6,7 +6,7 @@ from django.contrib.auth import login
 from notification_app.models import  Notification
 from django.views.generic import TemplateView
 
-# Create your views here.
+#  Create your views here.
 class user_profile(TemplateView):
 
     def get(self, request, user_id):
